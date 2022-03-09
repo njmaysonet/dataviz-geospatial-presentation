@@ -14,9 +14,6 @@ world <- map_data("world")
 #Isolating geometry for Ukraine
 ukraine <- world[world$region == "Ukraine",]
 
-#Violence Incidents in Ukraine
-violence <- read_csv("https://www.dropbox.com/s/k2v5g9j6zbne1xw/violence.csv?dl=1")
-
 #This is the plot for the Ukraine map
 p <- ggplot(data = ukraine,
             mapping = aes(
@@ -24,6 +21,9 @@ p <- ggplot(data = ukraine,
               y = lat,
               group = group
             ))
+
+#Violence Incidents in Ukraine
+violence <- read_csv("https://www.dropbox.com/s/k2v5g9j6zbne1xw/violence.csv?dl=1")
 
 #These are the scatterplot points for the incidents
 points <- geom_point(
